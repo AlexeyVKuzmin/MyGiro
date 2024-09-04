@@ -1,0 +1,683 @@
+body{
+	margin:0;
+	font-family: "Raleway", sans-serif;
+	font-size:16px;
+	line-height:1.5;
+	overflow-x:hidden ;
+	overflow-y:auto ;
+	color:#000;
+}
+a {text-decoration:none;
+}
+h1,  h2, h3 {
+  line-height: 1.45;
+  color:#404040;
+  font-weight: 500; 
+  font-family: "Manrope", sans-serif;
+}
+h1{
+	font-size:44px;
+	letter-spacing:3px;
+	}
+h2{
+	font-size:40px;
+	text-indent:50px;
+	}
+h3{
+	font-size:22px;
+
+	}
+.red{
+	color:#eb1f27;
+}
+.green{
+	color:#83D838;
+}
+.brick{
+	color:#D67E35;
+}
+button {
+	cursor:pointer;
+}
+.mt-25{
+margin-top:25px;
+}
+.mb-25{
+margin-bottom:25px;
+}
+.mt-50{
+margin-top:50px;
+}
+.mb-50{
+margin-bottom:50px;
+}
+.mt-75{
+margin-top:75px;
+}
+.mt-100{
+margin-top:100px;
+}
+.text-center{
+	text-align:center;
+}
+
+/*фиксированная область Главного меню*/
+.top{
+	width:100%;
+	background-color:#223654;
+	position:fixed;
+	top:0;
+	color:#fff;
+	z-index:10;
+	}
+/*отступы для комфортного размещения контента*/	
+.container{
+	padding-right:50px/*20px*/;
+	padding-left:50px/*20px*/;
+	margin-right:auto;
+	margin-left:auto
+	}
+.containertop{
+	padding-right:25px/*20px*/;
+	padding-left:25px/*20px*/;
+	margin-right:auto;
+	margin-left:auto
+	}
+#logo{
+	float:left;
+}
+/*Главное меню*/
+nav{
+	margin-top:0;
+	margin-bottom:0;
+	float:right;
+	}
+nav ul{
+	display:table;
+	float:right;
+	padding-right:15px;
+	}
+nav ul li{
+	float:left;
+	list-style-type:none
+	}
+.phone{
+	float:left;
+	font-size:19px;
+	padding-top:10px;
+    padding-left:50px;
+}
+			@media screen and (min-width: 400px) and (max-width: 1140px)  {
+				.phone{
+					display: none;
+				}
+			}
+nav ul li a{
+	color:#e4f2ff;
+	font-size:19px;
+	padding:2px 10px;
+	display:inline-block;
+	text-decoration:none
+	}
+nav ul li a:hover{
+	color:#FCC875;
+	}
+nav ul li.back{
+	border:1px solid #eb1f27;
+/* border-radius:15px;*/
+ }
+.active {
+color:#FCC875;
+border-bottom:4px double #FCC875;
+}
+
+/*меню "гамбургер"  */	
+input[type=checkbox],label{
+	display:none
+	}
+	
+/*----Слайдер----*/
+.slider-main {
+	margin-top:70px;
+	height: 100%;
+	width:100%;
+}
+
+.item {
+    height: 100%;
+	width:100%;
+}
+.item_col {
+    text-align: center;
+	height: 600px;
+	width:100%;
+}
+.slider-title h1{
+	padding-top:10%;
+	text-transform:uppercase;
+	font-size:55px;
+	font-weight:600;
+}
+
+.previous, .next {
+    cursor: pointer;
+    transition: all 0.3s linear;
+	padding: 7px 19px;
+	font-size:30px;
+	/*background-color: rgb(224,224,224);*/
+	/*opacity:0.5;*/
+	color:#a0a0a0;
+	z-index:0;
+}
+.previous{
+position:absolute;
+top:50%;
+left:3.5%;
+}
+.next{
+position:absolute;
+top:50%;
+left:95%;
+}
+.arrow_mobile {
+    display: none;
+}
+.previous:hover, .next:hover {
+    background-color: #a0a0a0;
+	opacity:0.65;
+    padding: 8px 20px;
+	color:#fff;
+}
+
+.slider-main .item {
+    animation:fadein 1.5s;
+}
+
+@keyframes fadein {
+  from {
+    opacity:0.4;
+  }
+  to {
+ opacity:1.0;
+  }
+}
+
+.head-title{
+    color: #D67E35;
+	text-shadow: 1px 0 0 #000;
+    font-weight: 600;
+    text-align: center;
+	font-size: 60px;
+    padding-top: 200px;
+	text-transform:uppercase;
+
+}
+.head-title span{
+	color:#fff;
+}
+.header-suptitle {
+	margin-top:22px;
+	margin-bottom:40px;
+    color: #fff;
+    font-size: 25px;
+}
+.header-bth{
+	margin-bottom:25px;
+}
+.header-button {
+    background-color: #FF7400;
+    padding: 5px 15px;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s linear;
+    border-radius: 5px 5px 5px 5px;
+	border:1px solid #FF8F3A;
+}
+.header-button:hover,.header-button:focus {
+    background-color: #904506;
+}		
+	/*Отображение слайдера на мобильных телефонах*/
+			@media screen and (max-width: 600px) {
+			.item {
+			flex-direction: column;
+			}
+			.slider-main {
+			margin: 0;
+			/*padding: auto;*/
+			}
+			.item_col {
+			height: 50%;
+			}
+			.previous, .next {
+			display: none;
+			}
+			.arrow_mobile {
+			display: flex;
+			justify-content: space-around;
+			}
+			.previous_mobile, .next_mobile {
+			align-self: center;
+			cursor: pointer;
+			transition: 0.3s;
+			color: white;
+			}
+			}
+
+
+/*Реклама*/
+.adv{background:url(../images/bg-adv.png);
+ color:#fff; 
+ font-size:20px; 
+ padding:25px 0;
+ margin-top:75px;
+}
+
+.cards-holder {
+    display: flex;
+	text-align:center;
+}
+.card {
+    width: 30%;
+    border:2px solid #c0c0c0;
+    margin-left:auto;
+	margin-right:auto;
+    background-color: #eaeaea;
+    padding: 10px 5px;
+	border-radius: 5px 5px 5px 5px;
+ }
+			@media screen and (min-width: 400px) and (max-width: 900px) {
+				.card{
+				width:90%;
+				}
+				.card-image {
+				padding-top:10px;
+				}
+				
+			}	
+			@media only screen and (min-width: 901px) and (max-width: 1200px)  {
+				.card {
+					width: 50%;
+				}
+			}
+			@media only screen and (min-width: 1201px){
+				  .card{width: 30%;
+				  }
+			}
+.card-image {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.card-title  {
+	color:#000;
+    margin:0 15px 10px 15px;
+    text-align: center;
+	font-size: 22px;
+}
+.card-desc {
+    text-align: center;
+    font-size:22px;
+    font-weight: 400;
+    color: #DC252A;
+	padding-bottom:25px;
+}
+
+/*Мелкий шрифт*/
+.sm{
+font-size:13px;
+font-style:italic;
+color:#404040;
+line-height:1.0;
+}
+.clear{
+	clear:left;
+}
+
+/*Создаем 2 колонки равной ширины*/
+.parent > div {
+    float: left;
+    width: 49%;
+    margin-right: 2%;
+    padding: 10px;
+   -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.parent:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.parent> div:last-child {
+    margin-right: 0;
+}
+.parent> div img {
+width:100%;
+}
+
+.parent1  .div1 {
+    float: left;
+    width: 29%;
+    margin-right: 1%;
+    padding: 10px;
+   -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.parent1  .div2 {
+    float: left;
+    width: 69%;
+    margin-right: 1%;
+    padding: 10px;
+   -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.parent1:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.parent1 .div2:last-child {
+    margin-right: 0;
+}
+
+/*---------Каталог------*/
+
+#catalog{
+margin-top: 55px;	
+}
+#BtnContainer
+ {
+margin-top: 35px;
+text-align:center;
+}
+
+/* Создаем 4 колонки равной ширины */
+.column {
+    float: left;
+    width: 23.5%;
+    margin-right: 1.5%;
+    display: none;
+	transition: all .3s ease-in-out;
+}
+.column:hover{
+	color:#000D5B;
+	background:#EBE8F7;
+	transform:scale(1.01);
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.content {
+    background-color: white;
+    padding: 10px;
+}
+.content >p.pic{
+	text-align:center;
+}
+.show {
+  display: block;
+}
+.btn {
+  border: 1px solid #ADADAD;
+  color:#ADADAD;
+  outline: none;
+  padding: 10px 14px;
+  background-color: white;
+  cursor: pointer;
+  font-size:18px;
+  border-radius: 5px;
+  margin-right:5px;
+  margin-bottom:5px;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.act {
+  color:#223654;
+  border: 1px solid #223654;
+  font-weight:600;  
+}
+
+.actv {
+color:#FCC875;	
+}
+/*отзывы*/
+.overslide{background:#EFF0F2; 
+width:50%;
+margin:0 auto; 
+border-radius:5px;
+z-index:-10;
+}
+			@media  screen and (min-width: 400px) and (max-width: 900px) {
+				.overslide{
+				width:90%;
+				}
+		
+			}	
+			@media  screen and (min-width: 901px) and (max-width: 1200px)  {
+				.overslide {
+					width: 70%;
+				}
+			}
+			@media  screen and (min-width: 1201px){
+				 .overslide{width: 50%;
+				  }
+			}
+.slider > div{
+ margin-right: 50px;/*для стрелок в отзывах*/
+ margin-left:50px;
+ padding: 0;
+}
+			
+/*футер*/
+.black-block {
+    background-image: url(../images/bg-footer.jpg);
+	background-repeat: no-repeat;
+    background-size: 100% 100%;
+	height: 100vh;
+	width: 100vw;
+	color:#fff;
+}
+.black-block h3{padding-top:35px;color:#fff;}
+
+.copyright{
+	padding-top:15px;
+	padding-bottom:15px;
+	text-align:center;
+	background-color:#223654;
+	color:#fff;
+}
+/*текстовые поля в модальном окне*/
+input[type=password],input[type=text],input[type=date],input[type=time], input[type=email], textarea,select{
+	outline: none;
+	border:1px solid #c0c0c0;
+	font-family:"Raleway", sans-serif;
+	font-size:16px;
+	margin-bottom:15px;
+	padding:5px;
+}
+textarea,select, input[type=date]{
+	color:#404040;
+}
+input[type=password]:focus,input[type=text]:focus,input[type=date]:focus,input[type=time]:focus, input[type=email]:focus, textarea:focus,select:focus{
+	outline: 2px solid #4d6795;
+	
+}
+
+/*Сообщения о подписке*/
+.sucсess, .error{
+	margin-top:50px;
+	font-size:18px;
+	font-weight:500;
+	background:rgb(255,255,255);
+	opacity:0.7;
+	padding:5px; 
+	text-align:center;
+	width:300px;
+	border-radius:5px 5px 5px 5px;
+	border:1px solid #D67E35;
+	}
+.sucсess{color:green;}
+.error{color:red;}
+
+/*кнопка "наверх"*/
+.back-to-top {
+ text-decoration:none;
+  position: fixed;
+  bottom: 20px;
+  right: 50px;
+  display: none;
+  font-size: 24px;
+  color: #fff;
+  background-color:#223654;
+  border: 1px solid #ADADAD;
+  padding: 5px 10px;
+  border-radius: 5px 5px 5px 5px;
+  cursor: pointer;
+  z-index: 1000;
+}
+ 
+.back-to-top:hover {
+  background: #D67E35;
+  text-decoration: none;
+}
+.reg{
+	width:35%;
+	margin: 0 auto;
+}
+.page_edit{
+	width:75%;
+	margin: 0 auto;
+}
+/*поля регистрации*/
+.reg input[type=text],input[type=email],input[type=password]{
+	width: calc(100% - 20px); /* Ширина содержимого */
+}
+/* счётчик товаров в корзине*/
+input[type="number"] {
+	background-color: #eee;
+	vertical-align: top;
+	text-align: center;
+	outline: none;
+	padding: 0;
+	height: 40px;
+	line-height: 40px;    
+	display: inline-block;
+	width: 100%;
+	box-sizing: border-box;
+	border: 1px solid #ddd;
+	font-size: 14px;
+	border-radius: 3px;
+} 
+#inum{
+	 border:1px solid #c0c0c;
+ }
+#inum:focus {
+	outline: 2px solid #4d6795;
+}
+input[type="number"] {
+	-moz-appearance: textfield;
+	-webkit-appearance: textfield;
+	appearance: textfield;
+}
+ 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	display: none;
+}
+.number {
+	display: inline-block;
+	position: relative;
+	width: 100px;
+	margin:0 auto;
+	text-align: center;
+}
+.number input[type="number"] {
+	font-size:16px;
+	display: block;
+	height: 32px;
+	line-height:32px;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	text-align: center;
+	-moz-appearance: textfield;
+	-webkit-appearance: textfield;
+	appearance: textfield;
+}
+.number input[type="number"]::-webkit-outer-spin-button,
+.number input[type="number"]::-webkit-inner-spin-button {
+	display: none;
+}
+.number-minus {
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	bottom: 1px;
+	width: 20px;
+	padding: 0;
+	display: block;
+	text-align: center;
+	border: none;
+	border-right: 1px solid #ddd;
+	font-size: 16px;
+	font-weight: 600;
+}
+.number-plus {
+	position: absolute;
+	top: 1px;
+	right: 1px;
+	bottom: 1px;
+	width: 20px;
+	padding: 0;
+	display: block;
+	text-align: center;
+	border: none;
+	border-left: 1px solid #ddd;
+	font-size: 16px;
+}
+
+/*вкладки*/
+   .tabs {
+    position: relative; /* Относительное позиционирование */
+   }
+   .tab, .tab-title {
+    display: inline-block; /* Выстраиваем по горизонтали */
+   }
+   .tab input[type="radio"] { display: none; }
+   .tab-title {
+    background: #ccc; /* Цвет фона */
+    padding: 5px 10px; /* Поля вокруг текста */
+    border: 1px solid #c0c0c0; /* Параметры рамки */
+    border-bottom: none; /* Снизу линию убираем */
+   }
+   .tab-content {
+    position: absolute; /* Абсолютное позиционирование */
+    border: 1px solid #c0c0c0; /* Параметры рамки */
+    padding: 10px; /* Поля вокруг текста */
+    left: 0; /* Размещаем у левого края */
+    width: calc(100% - 20px); /* Ширина содержимого */
+    display: none; /* Прячем вкладку */
+   }
+   .tab :checked + .tab-title {
+    position: relative; /* Относительное позиционирование */
+    background: #fff; /* Цвет фона */
+    top: 1px; /* Сдвигаем вниз */
+    z-index: 1; /* Отображаем поверх содержимого */
+   }
+   .tab :checked ~ .tab-content {
+    display: block; /* Показываем активную вкладку */
+   }
+   textarea.dlv{
+	   width: calc(100% - 20px); /* Ширина содержимого */
+   }
